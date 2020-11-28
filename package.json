@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev:serve": "webpack serve",
-    "prod:build": "weboack --env PROD=true",
-    "ghpages:deploy" : "npm run prod:build && gh-pages -d build"
+    "prod:build": "webpack --env PROD=true",
+    "ghpages:deploy": "npm run prod:build && gh-pages -d build"
   },
   "devDependencies": {
     "html-webpack-plugin": "^4.5.0",
