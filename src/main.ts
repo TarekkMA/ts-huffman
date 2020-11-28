@@ -39,13 +39,13 @@ export function encode(freqMap: Map<string, number>): Node {
   return root;
 }
 
-function printCode(node: Node, s = "") {
+export function getCodes(node: Node, charMap: Map<string, string>, s = "") {
   if (node.left == undefined || node.right == undefined) {
-    console.log(node.text, s);
+    charMap.set(node.text, s);
     return;
   }
-  printCode(node.left!!, s + "0");
-  printCode(node.right!!, s + "1");
+  getCodes(node.left!!, charMap, s + "0");
+  getCodes(node.right!!, charMap, s + "1");
 }
 
 // const node = encode(
@@ -69,5 +69,3 @@ function printCode(node: Node, s = "") {
 //   ])
 // );
 // printCode(node);
-
-
